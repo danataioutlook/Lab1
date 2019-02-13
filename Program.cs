@@ -4,25 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task3._1
+namespace lab1._11
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int[] a = new int[3];
-            a[0] = 1;
-            a[1] = 2;
-            a[2] = 3;
-          
-
-            for (int i = 0; i < a.Length; ++i)
+            
+            int b = int.Parse(Console.ReadLine());
+            for (int i = 1; i <=b; i++)
             {
-                for (int j = 0; j < 2; ++j)
+                if (isSimple(i) && i!=1)
                 {
-                    Console.Write(a[i] + " ");
+                    Console.Write(i.ToString() );
                 }
+                
             }
+            
+        }
+        //метод который определяет простое число или нет
+        private static bool isSimple(int N)
+        {
+            //чтоб убедится простое число или нет достаточно проверить не делитсья ли 
+            //число на числа до его половины
+            for (int i = 2; i <= (int)(N / 2); i++)
+            {
+                if (N % i == 0 )
+                    return false;
+            
+        
+            
+            }
+            return true;
         }
     }
 }
+   
